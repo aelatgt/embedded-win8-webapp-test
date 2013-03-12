@@ -1,4 +1,4 @@
 argon-win8
 ==========
 
-Argon2 Win8 Port
+Check in experiments / code related to the WinPhone 8 port - will integrate into the main Argon2 repo when things are ready.
