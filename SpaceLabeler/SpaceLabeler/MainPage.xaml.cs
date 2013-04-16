@@ -16,11 +16,18 @@ using Microsoft.Devices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Matrix = Microsoft.Xna.Framework.Matrix;
-
+using System.Windows.Threading;
 
 namespace SpaceLabeler
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class MyCustomePage : PhoneApplicationPage
+    {
+    }
+}
+
+namespace SpaceLabeler
+{
+    public partial class MainPage : MyCustomePage
     {
         PhotoCamera cam;
 
@@ -40,15 +47,15 @@ namespace SpaceLabeler
             // Initialize the list of TextBlock and Vector3 objects.
             textBlocks = new List<TextBlock>();
             points = new List<Vector3>();
-            gobutton.SetValue(Canvas.ZIndexProperty, 2);
-            searchbar.SetValue(Canvas.ZIndexProperty, 2);
-
-        }
-
-        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
-        {
+            //gobutton.SetValue(Canvas.ZIndexProperty, 2);
+            //searchbar.SetValue(Canvas.ZIndexProperty, 2);
             cam = new Microsoft.Devices.PhotoCamera();
             videoBrush.SetSource(cam);
+        }
+
+    
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
 
             if (!Motion.IsSupported)
             {
@@ -221,8 +228,7 @@ namespace SpaceLabeler
             string site;
             site = searchbar.Text;
             webBrowser1.Navigate(new Uri(site, UriKind.Absolute));
-            webBrowser1.SetValue(Canvas.ZIndexProperty, 2);
-
+            //webBrowser1.SetValue(Canvas.ZIndexProperty, 2);
 
         }
     }

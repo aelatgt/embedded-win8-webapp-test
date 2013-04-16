@@ -37,3 +37,16 @@ C:\Users\Varun\Desktop\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.dll
 C:\Users\Varun\Desktop\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.pdb
 C:\Users\Varun\Desktop\SpaceLabeler\SpaceLabeler\obj\Debug\XapCacheFile.xml
 C:\Users\Varun\Desktop\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.csprojResolveAssemblyReference.cache
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\Bin\Debug\ApplicationIcon.png
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\Bin\Debug\Background.png
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\Bin\Debug\SpaceLabeler.dll
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\Bin\Debug\SpaceLabeler.pdb
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\Bin\Debug\AppManifest.xaml
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\Bin\Debug\SpaceLabeler.xap
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\App.g.cs
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\MainPage.g.cs
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.g.resources
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.dll
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.pdb
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\XapCacheFile.xml
+C:\Users\Varun\Documents\GitHub\argon-win8\SpaceLabeler\SpaceLabeler\obj\Debug\SpaceLabeler.csprojResolveAssemblyReference.cache

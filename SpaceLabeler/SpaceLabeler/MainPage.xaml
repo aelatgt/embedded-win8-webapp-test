@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage 
+﻿<spaceLab:MyCustomePage
     x:Class="SpaceLabeler.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:spaceLab="clr-namespace:SpaceLabeler"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -14,30 +15,35 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        
-        <Rectangle Canvas.ZIndex="1" Margin="1.787,-1.384,-286.434,292.958" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.ColumnSpan="2">
+        <Grid.Background>
+            <VideoBrush x:Name="videoBrush" />
+        </Grid.Background>
+        <!--
+        <Rectangle Margin="1.787,-1.384,-286.434,292.958" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <VideoBrush x:Name="videoBrush" />
             </Rectangle.Fill>
             <Rectangle.RenderTransform>
                 <RotateTransform Angle="90" CenterX="240" CenterY="240"></RotateTransform>
             </Rectangle.RenderTransform>
-       </Rectangle>
+        </Rectangle>
+        -->
+        
+        <Button x:Name="gobutton" Background="Transparent" Foreground="Black" Content="Go" HorizontalAlignment="Left" Margin="407,8,-10,0" VerticalAlignment="Top" Click="Button_Click_1" Height="72" Width="83" Grid.ColumnSpan="2"/>
 
-        <Canvas Name="TextBoxCanvas" Background="#BB000000" Canvas.ZIndex="99" Visibility="Collapsed">
-            <TextBlock Text="name this point" Margin="20,130,0,0"/>
-            <TextBox Height="72" HorizontalAlignment="Left" Margin="8,160,0,0" Name="txtName" VerticalAlignment="Top" Width="460" KeyUp="txtName_KeyUp" />
-        </Canvas>
-        <Button x:Name="gobutton" Foreground="Black" Background="Transparent" Content="Go" HorizontalAlignment="Left" Margin="407,8,-10,0" VerticalAlignment="Top" Click="Button_Click_1" Height="72" Width="83" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="searchbar" Foreground="Black" Background="Transparent" HorizontalAlignment="Left" Height="72" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" Text="http://www.google.com"/>
+        <TextBox x:Name="searchbar" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="72" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="397" Text="http://www.google.com"/>
 
-        <phone:WebBrowser Foreground="Black" Background="Transparent" HorizontalAlignment="Stretch" Margin="5,80,-10,-10" Name="webBrowser1" VerticalAlignment="Stretch" IsGeolocationEnabled="True" Grid.ColumnSpan="2"  />
+        <phone:WebBrowser Foreground="Black" HorizontalAlignment="Stretch" Margin="5,80,-10,-10" Name="webBrowser1" VerticalAlignment="Stretch" IsGeolocationEnabled="True" Grid.ColumnSpan="2"  >
+         
+
+        </phone:WebBrowser>
+
 
     </Grid>
 
-</phone:PhoneApplicationPage>
+</spaceLab:MyCustomePage>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>motion APi with three.js</title>
+<script type="text/javascript" src="Three.js"></script>
+<script type="text/javascript" src="requestAnimFrame.js"></script>
+<style>
+body { margin: 0; padding: 0; font-family: "Georgia", serif; color: #444; }
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+var fov = 70,
+isUserInteracting = false,
+onMouseDownMouseX = 0, onMouseDownMouseY = 0,
+lon = 0, onMouseDownLon = 0,
+lat = 0, onMouseDownLat = 0,
+phi = 0, theta = 0;
+
+var quant;
+  var WebGLSupported = isWebGLSupported();                      // Check for WebGL support
+
+  // Create the renderer and add it to the page's body element
+  var renderer = WebGLSupported ? new THREE.WebGLRenderer() : new THREE.CanvasRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild( renderer.domElement );
+
+  // Create the scene to hold the object
+  var scene = new THREE.Scene();
+
+  // Create the camera
+  var camera = new THREE.Camera(fov,  window.innerWidth / window.innerHeight,1, 1100 );
+  camera.position.set( -15, 10, 15 );
+
+  // Create the materials
+	
+  var materialClass = WebGLSupported ? THREE.MeshLambertMaterial : THREE.MeshBasicMaterial;
+  var darkGrey =  new materialClass( { color: 0x333333 } );
+  var book = new THREE.Mesh(new THREE.CubeGeometry(5,5,5), darkGrey);
+  book.useQuaternion = true;
+  scene.addChild( book ); 
+				
+  // Begin the animation
+  animate();
+
+
+  /*
+    Animate a frame
+  */
+
+  function animate() {
+
+    // Rotate the book based on the current mouse position
+    //book.rotation.y = mouseX * 0.005;
+      //book.rotation.x = mouseY * 0.005;
+      
+      if (quant != null || quant != undefined) {
+	      book.quaternion = quant;
+	      //document.getElementById("debugT").innerText = quant.x + "," + quant.y + "," + quant.z + "," + quant.w;
+      }
+      
+
+    // Render the frame
+    renderer.render( scene, camera );
+
+    // Keep the animation going
+    requestAnimFrame( animate );
+  }
+
+
+function isWebGLSupported() {
+
+  var cvs = document.createElement('canvas');
+  var contextNames = ["webgl","experimental-webgl","moz-webgl","webkit-3d"];
+  var ctx;
+
+  if ( navigator.userAgent.indexOf("MSIE") >= 0 ) {
+    try {
+      ctx = WebGLHelper.CreateGLContext(cvs, 'canvas');
+    } catch(e) {}
+  } else {
+    for ( var i = 0; i < contextNames.length; i++ ) {
+      try {
+        ctx = cvs.getContext(contextNames[i]);
+        if ( ctx ) break;
+      } catch(e){}
+    }
+  }
+
+  if ( ctx ) return true;
+  return false;
+}
+
+function motionValues(qx,qy,qz,qw)
+{
+    x = parseFloat(qx);
+    y = parseFloat(qy);
+    z = parseFloat(qz);
+    w = parseFloat(qw);
+    quant= new THREE.Quaternion();
+    quant.set(x,y,z,w);
+}
+
+</script>
+    <div id="debugT"></div>
+</body>
+
+</html>
+
